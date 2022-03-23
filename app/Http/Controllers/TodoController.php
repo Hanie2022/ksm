@@ -43,7 +43,7 @@ class TodoController extends Controller
         $todo->name = $request->name;
         $todo->save();
 
-        return redirect('/todos');
+        return redirect('/todos')->with('status', 'New Data ' . $request->name . ' Added');
     }
 
     /**
@@ -89,6 +89,7 @@ class TodoController extends Controller
     public function destroy(Todo $todo)
     {
         $todo->delete();
-        return redirect('/todos');
+       // return redirect('/todos');
+        return redirect('/todos')->with('status', 'New Data Successful Deleted');
     }
 }

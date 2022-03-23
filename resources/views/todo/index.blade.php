@@ -18,6 +18,11 @@
                 <a href="/todos/create" class="btn btn-outline-primary">Create New</a>
                 <div class="card">
                     <div class="card-body">
+                        @if (session('status'))
+                    <div class="alert alert-success">
+                        {{ session('status')}}
+                    </div>
+                        @endif
                         <table class="table table-striped">
                             <thead>
                                 <tr>
